@@ -1,0 +1,14 @@
+{
+  "short_name": "Among Us IRL",
+  "name": "Among Us IRL",
+  "icons": [
+    {
+      "src": "launcher-icon.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "fullscreen",
+  "orientation": "portrait"
+}
