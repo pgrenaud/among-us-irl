@@ -3,6 +3,7 @@ import App from "./views/layouts/App.vue";
 import router from "./router";
 import store from "./store";
 import vuetify from "./plugins/vuetify";
+import Snackbar from "@/plugins/snackbar";
 import VueSocketIO from "vue-socket.io";
 
 Vue.config.productionTip = false;
@@ -20,6 +21,8 @@ Vue.use(
     }
   })
 );
+
+Vue.use(new Snackbar(store));
 
 new Vue({
   router,

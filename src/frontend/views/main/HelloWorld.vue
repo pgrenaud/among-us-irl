@@ -99,6 +99,20 @@
         >
       </li>
     </ul>
+    <br />
+    <v-btn color="primary" @click="showSnackbar1">
+      Show snackbar
+    </v-btn>
+    <v-btn color="primary" @click="showSnackbar2">
+      Show snackbar
+    </v-btn>
+    <v-btn color="primary" @click="showSnackbar3">
+      Show snackbar
+    </v-btn>
+
+    <v-btn fab color="error" elevation="6" fixed bottom right>
+      <v-icon>mdi-bullhorn-outline</v-icon>
+    </v-btn>
   </v-container>
 </template>
 
@@ -107,6 +121,20 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String
+  },
+  methods: {
+    showSnackbar1() {
+      this.$snackbar.showMessage({ content: "Hello, snackbar", close: true });
+    },
+    showSnackbar2() {
+      this.$snackbar.showMessage({ content: "Hello, snackbar", color: "info" });
+    },
+    showSnackbar3() {
+      this.$snackbar.showMessage({
+        content: "Hello, snackbar",
+        color: "error"
+      });
+    }
   }
 };
 </script>
