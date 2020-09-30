@@ -1,13 +1,13 @@
 export default {
   state: {
-    isConnected: false
+    connected: false
   },
   mutations: {
     SOCKET_connect(state) {
-      state.isConnected = true;
+      state.connected = true;
     },
     SOCKET_disconnect(state) {
-      state.isConnected = false;
+      state.connected = false;
     }
   },
   actions: {
