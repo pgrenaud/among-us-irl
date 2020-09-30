@@ -1,10 +1,11 @@
 import Vue from "vue";
-import App from "./views/layouts/App.vue";
-import router from "./router";
-import store from "./store";
-import vuetify from "./plugins/vuetify";
-import Snackbar from "@/plugins/snackbar";
 import VueSocketIO from "vue-socket.io";
+
+import App from "@/views/layouts/App";
+import router from "@/router";
+import store from "@/store";
+import vuetify from "@/plugins/vuetify";
+import Snackbar from "@/plugins/snackbar";
 
 Vue.config.productionTip = false;
 

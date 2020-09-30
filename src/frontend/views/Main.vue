@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import AppBar from "@/views/fragments/AppBar.vue";
-import NavigationDrawer from "@/views/fragments/NavigationDrawer.vue";
-import Snackbar from "@/views/fragments/Snackbar.vue";
-import HelloWorld from "@/views/main/HelloWorld.vue";
+import AppBar from "@/views/fragments/AppBar";
+import NavigationDrawer from "@/views/fragments/NavigationDrawer";
+import Snackbar from "@/views/fragments/Snackbar";
+import HelloWorld from "@/views/main/HelloWorld";
 
 export default {
   name: "Main",

@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Main from "../views/Main.vue";
+
+import Main from "@/views/Main";
 
 Vue.use(VueRouter);
 
@@ -13,14 +14,13 @@ const routes = [
   {
     path: "/dashboard",
     name: "Dashboard",
-    component: () =>
-      import(/* webpackChunkName: "dashboard" */ "../views/Dashboard.vue")
+    // eslint-disable-next-line
+    component: () => import(/* webpackChunkName: "dashboard" */ "@/views/Dashboard")
   },
   {
     path: "/button",
     name: "Button",
-    component: () =>
-      import(/* webpackChunkName: "button" */ "../views/Button.vue")
+    component: () => import(/* webpackChunkName: "button" */ "@/views/Button")
   }
 ];
 
