@@ -9,6 +9,7 @@
     </v-main>
 
     <Snackbar />
+    <Loading />
     <Disconnected />
   </v-app>
 </template>
@@ -17,6 +18,7 @@
 import AppBar from "@/views/fragments/AppBar";
 import NavigationDrawer from "@/views/fragments/NavigationDrawer";
 import Snackbar from "@/views/fragments/Snackbar";
+import Loading from "@/views/fragments/Loading";
 import Disconnected from "@/views/fragments/Disconnected";
 import HelloWorld from "@/views/main/HelloWorld";
 
@@ -26,6 +28,7 @@ export default {
     AppBar,
     NavigationDrawer,
     Snackbar,
+    Loading,
     Disconnected,
     HelloWorld
   },

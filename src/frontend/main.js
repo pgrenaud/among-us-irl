@@ -5,6 +5,7 @@ import App from "@/views/layouts/App";
 import router from "@/router";
 import store from "@/store";
 import vuetify from "@/plugins/vuetify";
+import Loading from "@/plugins/loading";
 import Snackbar from "@/plugins/snackbar";
 
 Vue.config.productionTip = false;
@@ -23,6 +24,7 @@ Vue.use(
   })
 );
 
+Vue.use(new Loading(store));
 Vue.use(new Snackbar(store));
 
 new Vue({
