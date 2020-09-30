@@ -2,6 +2,9 @@
 node_modules
 /dist
 
+# local webpack.config for "@" alias resolution in IDE
+/webpack.config.js
+
 
 # local env files
 .env.local
