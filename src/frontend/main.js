@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueSocketIO from "vue-socket.io";
 
 import App from "@/views/layouts/App";
+import i18n from "@/resources/lang";
 import router from "@/router";
 import store from "@/store";
 import vuetify from "@/plugins/vuetify";
@@ -28,6 +29,7 @@ Vue.use(new Loading(store));
 Vue.use(new Snackbar(store));
 
 new Vue({
+  i18n,
   router,
   store,
   vuetify,
