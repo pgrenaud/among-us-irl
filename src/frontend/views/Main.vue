@@ -1,8 +1,7 @@
 <template>
   <v-app>
-    <NavigationDrawer />
-
     <AppBar />
+    <NavigationDrawer />
 
     <v-main>
       <component v-bind:is="component" />
