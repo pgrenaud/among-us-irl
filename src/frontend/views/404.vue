@@ -5,7 +5,7 @@
     </div>
 
     <div class="message">
-      Not Found
+      {{ $t("errors.404") }}
     </div>
   </div>
 </template>

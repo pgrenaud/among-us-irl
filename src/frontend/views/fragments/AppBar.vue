@@ -4,7 +4,7 @@
       @click.stop="toggleNavigationDrawer"
     ></v-app-bar-nav-icon>
 
-    <v-toolbar-title>Among Us IRL</v-toolbar-title>
+    <v-toolbar-title>{{ $t("general.title") }}</v-toolbar-title>
 
     <v-spacer></v-spacer>
 

@@ -6,7 +6,7 @@
           John Doe
         </v-list-item-title>
         <v-list-item-subtitle>
-          Room: 1234
+          {{ $t("navigation.header.room", { room: "1234" }) }}
         </v-list-item-subtitle>
       </v-list-item-content>
     </v-list-item>
@@ -50,7 +50,7 @@
     <v-divider></v-divider>
 
     <v-list subheader dense>
-      <v-subheader>Settings</v-subheader>
+      <v-subheader>{{ $t("navigation.settings.title") }}</v-subheader>
 
       <v-list-item @click.stop="toggleLightDarkTheme">
         <v-list-item-icon>
@@ -58,7 +58,9 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>Toggle Light/Dark theme</v-list-item-title>
+          <v-list-item-title>
+            {{ $t("navigation.settings.toggle_theme") }}
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
     </v-list>

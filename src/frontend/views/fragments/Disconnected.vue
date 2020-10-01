@@ -2,12 +2,12 @@
   <v-dialog v-model="show" persistent width="300">
     <v-card color="warning">
       <v-card-title>
-        Disconnected!
+        {{ $t("errors.disconnected.title") }}
         <v-spacer />
         <v-icon>mdi-connection</v-icon>
       </v-card-title>
       <v-card-text>
-        <p>Trying to reconnect...</p>
+        <p>{{ $t("errors.disconnected.message") }}</p>
         <v-progress-linear indeterminate color="white" class="mb-0" />
       </v-card-text>
     </v-card>
