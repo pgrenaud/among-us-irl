@@ -6,6 +6,7 @@ import i18n from "@/resources/lang";
 import router from "@/router";
 import store from "@/store";
 import vuetify from "@/plugins/vuetify";
+import Container from "@/plugins/container";
 import Loading from "@/plugins/loading";
 import Navigation from "@/plugins/navigation";
 import Snackbar from "@/plugins/snackbar";
@@ -26,6 +27,7 @@ Vue.use(
   })
 );
 
+Vue.use(new Container(store));
 Vue.use(new Loading(store));
 Vue.use(new Navigation(store));
 Vue.use(new Snackbar(store));

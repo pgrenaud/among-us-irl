@@ -5,7 +5,7 @@
     <AppBar />
 
     <v-main>
-      <HelloWorld msg="Welcome to Your Vue.js App" />
+      <component v-bind:is="component" />
     </v-main>
 
     <Snackbar />
@@ -20,7 +20,8 @@ import NavigationDrawer from "@/views/fragments/NavigationDrawer";
 import Snackbar from "@/views/fragments/Snackbar";
 import Loading from "@/views/fragments/Loading";
 import Disconnected from "@/views/fragments/Disconnected";
-import HelloWorld from "@/views/main/HelloWorld";
+import Lobby from "@/views/main/Lobby";
+import Login from "@/views/main/Login";
 
 export default {
   name: "Main",
@@ -30,7 +31,21 @@ export default {
     Snackbar,
     Loading,
     Disconnected,
-    HelloWorld
+    Login,
+    Lobby
+  },
+  data: () => ({
+    component: "login"
+  }),
+  created() {
+    this.unsubscribe = this.$store.subscribe((mutation, state) => {
+      if (mutation.type === "CONTAINER_COMPONENT_UPDATE") {
+        this.component = state.container.component;
+      }
+    });
+  },
+  beforeDestroy() {
+    this.unsubscribe();
   }
 };
 </script>
