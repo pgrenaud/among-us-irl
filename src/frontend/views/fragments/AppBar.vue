@@ -19,8 +19,7 @@ export default {
   name: "AppBar",
   methods: {
     toggleNavigationDrawer() {
-      console.log("toggleNavigationDrawer from v-app-bar");
-      this.$emit("toggle-navigation-drawer");
+      this.$navigation.toggleDrawer();
     }
   }
 };

@@ -74,13 +74,19 @@ export default {
     drawer: false
   }),
   methods: {
-    toggleNavigationDrawer() {
-      console.log("toggleNavigationDrawer from v-navigation-drawer");
-      this.drawer = !this.drawer;
-    },
     toggleLightDarkTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     }
+  },
+  created() {
+    this.unsubscribe = this.$store.subscribe(mutation => {
+      if (mutation.type === "NAVIGATION_TOGGLE_DRAWER") {
+        this.drawer = !this.drawer;
+      }
+    });
+  },
+  beforeDestroy() {
+    this.unsubscribe();
   }
 };
 </script>

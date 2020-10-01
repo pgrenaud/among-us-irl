@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <NavigationDrawer ref="navigationDrawer" />
+    <NavigationDrawer />
 
-    <AppBar @toggle-navigation-drawer="toggleNavigationDrawer" />
+    <AppBar />
 
     <v-main>
       <HelloWorld msg="Welcome to Your Vue.js App" />
@@ -31,12 +31,6 @@ export default {
     Loading,
     Disconnected,
     HelloWorld
-  },
-  methods: {
-    toggleNavigationDrawer() {
-      console.log("toggleNavigationDrawer from v-app");
-      this.$refs.navigationDrawer.toggleNavigationDrawer();
-    }
   }
 };
 </script>
