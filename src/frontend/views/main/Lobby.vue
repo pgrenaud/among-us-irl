@@ -1,11 +1,11 @@
 <template>
   <v-container fluid>
-    <h1>Lobby</h1>
+    <h1>{{ $t("lobby.title") }}</h1>
     <v-btn color="primary" @click="showSnackbar">
       Show snackbar
     </v-btn>
     <v-btn color="primary" @click="logout">
-      Logout
+      {{ $t("general.logout") }}
     </v-btn>
   </v-container>
 </template>

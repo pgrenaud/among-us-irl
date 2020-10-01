@@ -1,25 +1,28 @@
 <template>
   <v-container fluid>
-    <h1 class="mt-5 mb-3">Login</h1>
+    <h1 class="mt-5 mb-3">{{ $t("login.title") }}</h1>
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-text-field
         v-model="room"
-        :counter="4"
+        :counter="roomLength"
         :rules="roomRules"
-        label="Room code"
+        :label="$t('login.label.room')"
+        validate-on-blur
         required
+        autocomplete="off"
       ></v-text-field>
 
       <v-text-field
         v-model="name"
-        :counter="16"
+        :counter="nameLength"
         :rules="nameRules"
-        label="Name"
+        :label="$t('login.label.name')"
         required
+        autocomplete="nickname"
       ></v-text-field>
 
       <v-btn :disabled="!valid" color="primary" @click="submit" class="mt-5">
-        Login
+        {{ $t("login.label.submit") }}
       </v-btn>
     </v-form>
   </v-container>
@@ -32,16 +35,10 @@ export default {
     valid: true,
     name: "",
     nameLength: 16,
-    nameRules: [
-      v => !!v || "Name is required",
-      v => (v && v.length <= 16) || "Name must be less than 16 characters"
-    ],
+    nameRules: [],
     room: "",
     roomLength: 4,
-    roomRules: [
-      v => !!v || "Room code is required",
-      v => (v && v.length === 4) || "Room code must be exactly 4 characters"
-    ]
+    roomRules: []
   }),
   methods: {
     submit() {
@@ -60,6 +57,19 @@ export default {
   },
   mounted() {
     this.$loading.hideSpinner();
+
+    this.nameRules = [
+      v => !!v || this.$i18n.t("login.rules.name.required"),
+      v =>
+        (v && v.length <= this.nameLength) ||
+        this.$i18n.t("login.rules.name.length", { length: this.nameLength })
+    ];
+    this.roomRules = [
+      v => !!v || this.$i18n.t("login.rules.room.required"),
+      v =>
+        (v && v.length === this.roomLength) ||
+        this.$i18n.t("login.rules.room.length", { length: this.roomLength })
+    ];
   }
 };
 </script>
