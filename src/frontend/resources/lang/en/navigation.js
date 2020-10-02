@@ -1,6 +1,6 @@
 export default {
   header: {
-    room: "Room: {room}"
+    leave_room: "Leave room {room}"
   },
   settings: {
     title: "Settings",
