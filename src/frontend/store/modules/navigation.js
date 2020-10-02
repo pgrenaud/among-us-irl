@@ -9,8 +9,8 @@ export default {
     }
   },
   actions: {
-    toggleNavigationDrawer() {
-      this.commit("NAVIGATION_TOGGLE_DRAWER");
+    toggleNavigationDrawer({ commit }) {
+      commit("NAVIGATION_TOGGLE_DRAWER");
     },
     setAppBarTitle({ commit }, payload) {
       commit("NAVIGATION_SET_TITLE", { title: payload.title });

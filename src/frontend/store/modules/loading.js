@@ -8,11 +8,11 @@ export default {
     }
   },
   actions: {
-    loadingShowSpinner() {
-      this.commit("LOADING_UPDATE", { loading: true });
+    loadingShowSpinner({ commit }) {
+      commit("LOADING_UPDATE", { loading: true });
     },
-    loadingHideSpinner() {
-      this.commit("LOADING_UPDATE", { loading: false });
+    loadingHideSpinner({ commit }) {
+      commit("LOADING_UPDATE", { loading: false });
     }
   }
 };

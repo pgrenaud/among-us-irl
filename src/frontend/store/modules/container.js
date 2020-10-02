@@ -8,11 +8,11 @@ export default {
     }
   },
   actions: {
-    containerLoadLogin() {
-      this.commit("CONTAINER_COMPONENT_UPDATE", { component: "login" });
+    containerLoadLogin({ commit }) {
+      commit("CONTAINER_COMPONENT_UPDATE", { component: "login" });
     },
-    containerLoadLobby() {
-      this.commit("CONTAINER_COMPONENT_UPDATE", { component: "lobby" });
+    containerLoadLobby({ commit }) {
+      commit("CONTAINER_COMPONENT_UPDATE", { component: "lobby" });
     }
   }
 };
