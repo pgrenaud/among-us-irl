@@ -1,6 +1,5 @@
 <template>
   <v-container fluid>
-    <h1>{{ $t("lobby.title") }}</h1>
   </v-container>
 </template>
 
@@ -8,6 +7,7 @@
 export default {
   name: "Lobby",
   mounted() {
+    this.$navigation.setTitle("Lobby");
     this.$loading.hideSpinner();
   }
 };

@@ -6,6 +6,10 @@ export default class Navigation {
     Vue.prototype.$navigation = {
       toggleDrawer: () => {
         this.store.dispatch("toggleNavigationDrawer");
+      },
+      setTitle: title => {
+        console.log("$navigation.setTitle", title);
+        this.store.dispatch("setAppBarTitle", { title: title });
       }
     };
   }

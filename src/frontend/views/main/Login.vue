@@ -1,6 +1,5 @@
 <template>
   <v-container fluid>
-    <h1 class="mt-5 mb-3">{{ $t("login.title") }}</h1>
     <v-form ref="form" v-model="valid" lazy-validation>
       <v-text-field
         v-model="room"
@@ -60,6 +59,7 @@ export default {
     }
   },
   mounted() {
+    this.$navigation.setTitle("Login");
     this.$loading.hideSpinner();
 
     this.nameRules = [
