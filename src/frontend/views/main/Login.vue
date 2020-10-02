@@ -7,7 +7,9 @@
         :counter="roomLength"
         :rules="roomRules"
         :label="$t('login.label.room')"
+        prepend-icon="mdi-home"
         validate-on-blur
+        clearable
         required
         autocomplete="off"
       ></v-text-field>
@@ -17,6 +19,8 @@
         :counter="nameLength"
         :rules="nameRules"
         :label="$t('login.label.name')"
+        prepend-icon="mdi-account-box"
+        clearable
         required
         autocomplete="nickname"
       ></v-text-field>
