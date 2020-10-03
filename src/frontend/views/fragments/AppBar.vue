@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app absolute color="primary" dark>
+  <v-app-bar app fixed color="primary" dark>
     <v-app-bar-nav-icon
       @click.stop="toggleNavigationDrawer"
     ></v-app-bar-nav-icon>
