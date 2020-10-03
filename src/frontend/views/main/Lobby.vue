@@ -1,6 +1,6 @@
 <template>
-  <v-container fluid>
-    <v-list>
+  <div class="d-flex flex-column fill-height">
+    <v-list class="flex-grow-1">
       <v-list-item v-for="user in users" :key="user.id">
         <v-list-item-avatar>
           <v-avatar color="grey" size="36">
@@ -24,12 +24,24 @@
         </v-list-item-action>
       </v-list-item>
     </v-list>
-  </v-container>
+
+    <BottomBar app fixed grow>
+      <v-btn color="success" text @click="start">
+        <span>Start</span>
+        <v-icon>mdi-play</v-icon>
+      </v-btn>
+    </BottomBar>
+  </div>
 </template>
 
 <script>
+import BottomBar from "@/components/BottomBar";
+
 export default {
   name: "Lobby",
+  components: {
+    BottomBar
+  },
   data: () => ({
     users: [
       {
@@ -47,30 +59,68 @@ export default {
       {
         id: 4,
         name: "Sylvie Graton"
+      },
+      {
+        id: 5,
+        name: "Bob Graton"
+      },
+      {
+        id: 6,
+        name: "Alice Graton"
+      },
+      {
+        id: 7,
+        name: "Joe Graton"
+      },
+      {
+        id: 8,
+        name: "Sylvie Graton"
+      },
+      {
+        id: 9,
+        name: "Bob Graton"
+      },
+      {
+        id: 10,
+        name: "Alice Graton"
+      },
+      {
+        id: 11,
+        name: "Joe Graton"
+      },
+      {
+        id: 12,
+        name: "Sylvie Graton"
+      },
+      {
+        id: 13,
+        name: "Bob Graton"
+      },
+      {
+        id: 14,
+        name: "Alice Graton"
+      },
+      {
+        id: 15,
+        name: "Joe Graton"
+      },
+      {
+        id: 16,
+        name: "Sylvie Graton"
       }
     ]
   }),
+  methods: {
+    start() {
+      this.$snackbar.showMessage({
+        content: "Starting the game",
+        color: "success"
+      });
+    }
+  },
   mounted() {
     this.$navigation.setTitle("Lobby");
     this.$loading.hideSpinner();
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
