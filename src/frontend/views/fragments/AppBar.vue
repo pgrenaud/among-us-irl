@@ -8,7 +8,7 @@
 
     <v-spacer></v-spacer>
 
-    <v-btn icon>
+    <v-btn icon v-if="login">
       <v-icon>mdi-account-circle</v-icon>
     </v-btn>
   </v-app-bar>
@@ -18,7 +18,8 @@
 export default {
   name: "AppBar",
   data: () => ({
-    title: ""
+    title: "",
+    login: false
   }),
   methods: {
     toggleNavigationDrawer() {
@@ -29,6 +30,9 @@ export default {
     this.unsubscribe = this.$store.subscribe((mutation, state) => {
       if (mutation.type === "NAVIGATION_SET_TITLE") {
         this.title = state.navigation.title;
+      }
+      if (mutation.type === "CONTAINER_COMPONENT_UPDATE") {
+        this.login = state.container.component === "lobby";
       }
     });
   },
